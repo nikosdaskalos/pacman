@@ -62,7 +62,7 @@
             this.load.crossOrigin = 'anonymous';
             
             this.load.image('dot', 'assets/dot.png');
-            //this.load.image('strawberrie','assets/strawberrie.png');//pente
+            this.load.image('strawberrie','assets/strawberrie.png');//pente
             this.load.image('tiles', 'assets/pacman-tiles.png');
             this.load.spritesheet('pacman', 'assets/pacman.png');
             this.load.tilemap('map', 'assets/pacman-map.json', null, Phaser.Tilemap.TILED_JSON);
@@ -75,7 +75,7 @@
             
             this.layer = this.map.createLayer('Pacman');
             
-            //this.strawberries=this.add.physicsGroup();//pente
+            this.strawberries=this.add.physicsGroup();//pente
             this.dots = this.add.physicsGroup();
             //this.map.createFromTiles(7, this.safetile, 'strawberrie', this.layer, this.strawberries);//pente
             this.map.createFromTiles(7, this.safetile, 'dot', this.layer, this.dots);

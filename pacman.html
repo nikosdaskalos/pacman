@@ -17,6 +17,8 @@
         <audio autoplay loop>
             <source src="assets/pacman_beginning.wav" type="audio/mpeg">
         </audio>
+        <button ID="mute" onclick="muteAudio()">
+        <img src="assets/mute.ico" ID="mute_ico"/>
     <IMG STYLE="position:absolute; TOP:35px; LEFT:10px; WIDTH:500px; HEIGHT:180px" SRC="assets/Pac-man-50b7b12e49245.png">
     <IMG STYLE="position:absolute; TOP:200px; LEFT:90px; WIDTH:80px; HEIGHT:80px" SRC="assets/2af2c4f1310cde76dc1008d8fa60350e.jpg">
         
@@ -220,6 +222,18 @@
             }
             return "-90";
         },
+        function muteAudio() {
+            var audio = document.getElementById('audioPlayer');
+            if (audio.mute == false) 
+    {
+        document.getElementById('audioPlayer').muted = true;
+    }
+    else 
+    {
+        audio.mute = true 
+        document.getElementById('audioPlayer').muted = false;
+    }
+               
               
         
         eatDot: function (pacman, dot) {

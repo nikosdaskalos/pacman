@@ -228,7 +228,7 @@
         eatDot: function (pacman, dot) {
             dot.kill();            
             var audio = new Audio('assets/pacman_chomp.wav');
-            setTimeout(audio.play(),1000);
+            setTimeout(audio.play(),2000);
             
             if (this.dots.total === 0)
             {

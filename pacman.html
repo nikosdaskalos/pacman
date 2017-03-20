@@ -48,8 +48,8 @@
         this.current = Phaser.NONE;
         this.turning = Phaser.NONE;
         
-        this.score=0;//dok
-        this.scoreText='';//dok
+        //this.score=0;//dok
+        //this.scoreText='';//dok
     };
         
     Pacman.prototype = {
@@ -107,7 +107,7 @@
             //this.pacman.play('munch');
             this.move(Phaser.LEFT);
             
-            this.scoreText = game.add.text(16, 16, 'Score: 0', { fontSize: '32px', fill: 'red' });//dok
+            //this.scoreText = game.add.text(16, 16, 'Score: 0', { fontSize: '32px', fill: 'red' });//dok
         },
         
         checkKeys: function () {
@@ -236,8 +236,8 @@
             dot.kill();            
             var audio = new Audio('assets/pacman_chomp.wav');
             audio.play()
-            this.score+=10;//dok
-            this.scoreText.text= 'Score: ' + this.score;//dok
+            //this.score+=10;//dok
+            //this.scoreText.text= 'Score: ' + this.score;//dok
             //setTimeout(audio.play(),2000);
             
             if (this.dots.total === 0)

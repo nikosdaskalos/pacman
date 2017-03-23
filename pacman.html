@@ -292,7 +292,7 @@
 	eatStr: function(pacman,str){//pente
             str.kill();
 	    this.bonus+=100;
-            this.bonusText.text= 'Score: ' + this.bonus;
+            this.bonusText.text= 'Bonus: ' + this.bonus;
 	    var audio = new Audio('assets/pacman_eatfruit.wav');
             audio.play()
             if(this.strs.total===0)

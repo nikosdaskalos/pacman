@@ -126,6 +126,13 @@
 			pacman.angle = 90;
 			pacman.alpha = 0.4;
 		    }	
+		
+            var sprite = game.add.sprite(417, 465, 'str');
+	    var sprite2=game.add.sprite(18,18,'coin');
+	    sprite2.alpha=0;
+	    sprite.alpha =0;
+	    game.add.tween(sprite).to( { alpha: 1 }, 2000, Phaser.Easing.Linear.None, true, 0, 1000, true);
+	    game.add.tween(sprite2).to( { alpha: 1 }, 2000, Phaser.Easing.Linear.None, true, 0, 1000, true);
         },
         
         checkKeys: function () {

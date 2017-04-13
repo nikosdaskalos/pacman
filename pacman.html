@@ -289,10 +289,10 @@
             this.scoreText.text= 'Score: ' + this.score;
 	    var audio = new Audio('assets/pacman_eatfruit.wav');
             audio.play()
-            if(this.coins.total===0)
+            /*if(this.coins.total===0)
             {
                 this.coins.callAll('revive');
-            }
+            }*/
         },
 	    
 	eatStr: function(pacman,str){//pente
@@ -301,10 +301,10 @@
             this.bonusText.text= 'Bonus: ' + this.bonus;
 	    var audio = new Audio('assets/pacman_eatfruit.wav');
             audio.play()
-            if(this.strs.total===0)
+            /*if(this.strs.total===0)
             {
                 this.strs.callAll('revive');
-            }
+            }*/
         },
         
         update: function () {

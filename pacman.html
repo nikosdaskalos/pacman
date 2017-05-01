@@ -300,8 +300,8 @@
 	 //eat strawberrie function   
 	eatStr: function(pacman,str){
             str.kill();
-	    this.bonus+=100;//anebasma bonus
-            this.bonusText.text= 'Bonus: ' + this.bonus;
+	    this.score+=20;//anebasma score
+            this.scoreText.text= 'Score: ' + this.score;
 	    var audio = new Audio('assets/pacman_eatfruit.wav');//mousiki bonus
             audio.play()
             /*if(this.strs.total===0)

@@ -13,10 +13,11 @@
     <script src="//cdn.jsdelivr.net/phaser/2.2.2/phaser.min.js"></script>
 </head>
 <body>
-    <audio autoplay loop>
+     //game music
+    <audio autoplay loop>     
         <source src="assets/pacman_ringtone.mp3" type="audio/mp3">
     </audio>
-        
+     //logo 
     <IMG STYLE="position:absolute; TOP:35px; LEFT:10px; WIDTH:500px; HEIGHT:180px" SRC="assets/Pac-man-50b7b12e49245.png">
     <IMG STYLE="position:absolute; TOP:200px; LEFT:90px; WIDTH:80px; HEIGHT:80px" SRC="assets/2af2c4f1310cde76dc1008d8fa60350e.jpg">
     
@@ -46,10 +47,10 @@
         
         this.current = Phaser.NONE;
         this.turning = Phaser.NONE;
-        
+        // score
         this.score=0;
         this.scoreText='';
-	    
+	// bonus  
 	this.bonus=0;
 	this.bonusText='';
         
@@ -87,6 +88,7 @@
             
             
             this.dots = this.add.physicsGroup();
+            //new dots(coins,strawberries,dot)
             this.map.createFromTiles(36, this.safetile, 'str', this.layer, this.dots);
             this.map.createFromTiles(7, this.safetile, 'dot', this.layer, this.dots);
             this.map.createFromTiles(35, this.safetile, 'coin', this.layer, this.dots);
@@ -109,15 +111,15 @@
             
             //this.pacman.play('munch');
             this.move(Phaser.LEFT);
-            
+            //topothetisi keimenou tou score
             this.scoreText = game.add.text(0, 500, 'Score: 0', { fontSize: '34px Arial', fill: 'white' });
-            
+            //topothetisi keimenou lifes
             lives = game.add.group();
             game.add.text(game.world.width - 340, 500, 'Lives : ', { fontSize: '34px Arial', fill: 'white' });
 	    
-	
+	    //topothetisi keimenou
             this.bonusText = game.add.text(360, 500, 'Bonus: 0', { fontSize: '20px Arial', fill: 'white' });
-		
+            //dhmiourgia 3 lifes 
             for (var i = 0; i < 3; i++) 
 		    {
 			var pacman = lives.create(game.world.width - 235 + (30 * i), 517, 'pacman');
@@ -125,11 +127,12 @@
 			pacman.angle = 90;
 			pacman.alpha = 0.4;
 		    }	
-		
+            //ta sprite pou eksafanizontai
             var sprite = game.add.sprite(417, 465, 'str');
 	    var sprite2=game.add.sprite(18,18,'coin');
 	    //sprite2.alpha=0;
 	    //sprite.alpha =0;
+	    //xronos pou kanoun na eksafanistoun
 	    game.add.tween(sprite).to( { alpha: 0 }, 30000, Phaser.Easing.Linear.None, true);//, 0, 100000, true);
 	    game.add.tween(sprite2).to( { alpha: 0 }, 90000, Phaser.Easing.Linear.None, true);//, 0, 100000, true);
         },
@@ -255,12 +258,12 @@
        
                
               
-        
+        //eat dot function
         eatDot: function (pacman, dot) {
             dot.kill();            
-            var audio = new Audio('assets/pacman_chomp.wav');
+            var audio = new Audio('assets/pacman_chomp.wav');//mousiki sto fagoma
             audio.play()
-            this.score+=10;
+            this.score+=10;//anebasma tou score
             this.scoreText.text= 'Score: ' + this.score;
             //setTimeout(audio.play(),2000);
             
@@ -282,24 +285,24 @@
 
             }
         }*/
-        
+        //eat coin function
         eatCoin: function(pacman,coin){//pente
             coin.kill();
 	    this.score+=20;
             this.scoreText.text= 'Score: ' + this.score;
-	    var audio = new Audio('assets/pacman_eatfruit.wav');
+	    var audio = new Audio('assets/pacman_eatfruit.wav'); //mousiki sto fagoma
             audio.play()
             /*if(this.coins.total===0)
             {
                 this.coins.callAll('revive');
             }*/
         },
-	    
-	eatStr: function(pacman,str){//pente
+	 //eat strawberrie function   
+	eatStr: function(pacman,str){
             str.kill();
-	    this.bonus+=100;
+	    this.bonus+=100;//anebasma bonus
             this.bonusText.text= 'Bonus: ' + this.bonus;
-	    var audio = new Audio('assets/pacman_eatfruit.wav');
+	    var audio = new Audio('assets/pacman_eatfruit.wav');//mousiki bonus
             audio.play()
             /*if(this.strs.total===0)
             {

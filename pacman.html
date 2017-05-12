@@ -290,6 +290,8 @@
             coin.kill();
 	    this.score+=20;//anebasma score
             this.scoreText.text= 'Score: ' + this.score;
+            this.bonus+=100;
+            this.bonusText.text= 'Bonus: '+ this.bonus;
 	    var audio = new Audio('assets/pacman_eatfruit.wav'); //mousiki sto fagoma
             audio.play()
             /*if(this.coins.total===0)
